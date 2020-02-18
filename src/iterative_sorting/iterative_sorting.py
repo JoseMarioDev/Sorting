@@ -7,18 +7,27 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
 
+        # loop through array starting with index[1], compare values
         for j in range(i + 1, len(arr)):
             if arr[j] < arr[smallest_index]:
+                print(f"compare {arr[j]} and {arr[smallest_index]}")
                 smallest_index = j
+        # TO-DO: swap
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
         print(f"Swapped {arr[i]} with {arr[smallest_index]}")
-
-        # TO-DO: swap
 
     return arr
 
 
+# my own test to see what's going on
+# time complexity is O(n^2) because of nested loop?
+
+my_array = [5, 4, 3, 2, 1]
+print(selection_sort(my_array))
+
+
 # TO-DO:  implement the Bubble Sort function below
+
 def bubble_sort(arr):
     for k in range(len(arr)):
         for l in range(len(arr) - k - 1):
@@ -26,6 +35,10 @@ def bubble_sort(arr):
                 arr[l], arr[l + 1] = arr[l + 1], arr[l]
 
     return arr
+
+
+my_array = [6, 4, 3, 2, 1]
+print(bubble_sort(my_array))
 
 
 # STRETCH: implement the Count Sort function below
