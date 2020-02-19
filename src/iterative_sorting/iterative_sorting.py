@@ -29,14 +29,22 @@ print(selection_sort(my_array))
 # TO-DO:  implement the Bubble Sort function below
 
 def bubble_sort(arr):
-    for k in range(len(arr)):
-        for l in range(len(arr) - k - 1):
-            if arr[l] > arr[l + 1]:
-                arr[l], arr[l + 1] = arr[l + 1], arr[l]
+     # set variable to track if swaps were made
+    is_swapped = True  # to start the loop
+    while is_swapped:
+        # Now reset swaps to False & only set to True if a swap occurs
+        is_swapped = False
+        for i in range(0, len(arr) - 1):
+            # if element to the right is smaller, swap them
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                is_swapped = True
 
     return arr
 
 
+# my own test to see what's going on
+# time complexity is O(n^2) because of nested loop?
 my_array = [6, 4, 3, 2, 1]
 print(bubble_sort(my_array))
 
